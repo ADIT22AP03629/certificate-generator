@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Consolidated Marksheet Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Fill Trainee Details</h2>
+    <form id="marksheetForm">
+      <input type="text" placeholder="Roll No" id="roll" required />
+      <input type="text" placeholder="Name" id="name" required />
+      <input type="text" placeholder="Father's Name" id="father" required />
+      <input type="text" placeholder="Trade Name" id="trade" required />
+      <input type="text" placeholder="ITI Name & Address" id="iti" required />
+      <input type="text" placeholder="NSQF Level" id="nsqf" required />
+      <input type="text" placeholder="Date of Birth (dd-mm-yyyy)" id="dob" required />
+      <input type="text" placeholder="Exam Month-Year" id="examMonth" required />
+      <input type="text" placeholder="Trainee Type" id="traineeType" required />
+      <input type="date" placeholder="Result Date" id="resultDate" required />
+      <input type="file" id="photo" accept="image/*" required />
+      <!-- Year 1 and 2 marks input fields -->
+      <h3>Marks Entry</h3>
+      <div class="marks">
+        <label>Year 1 - Theory: <input type="number" id="th1" /></label>
+        <label>Year 1 - ES: <input type="number" id="es1" /></label>
+        <label>Year 1 - Practical: <input type="number" id="pr1" /></label>
+        <label>Year 1 - FA: <input type="number" id="fa1" /></label>
+        <label>Year 2 - Theory: <input type="number" id="th2" /></label>
+        <label>Year 2 - ES: <input type="number" id="es2" /></label>
+        <label>Year 2 - Practical: <input type="number" id="pr2" /></label>
+        <label>Year 2 - FA: <input type="number" id="fa2" /></label>
+      </div>
+      <button type="button" onclick="generateMarksheet()">Generate Marksheet</button>
+    </form>
+  </div>
+
+  <div id="output" class="certificate hidden">
+    <!-- Output content dynamically filled -->
+  </div>
+
+  <button id="downloadBtn" onclick="downloadPDF()" class="hidden">Download PDF</button>
+
+  <script src="html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
